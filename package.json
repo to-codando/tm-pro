@@ -1,0 +1,58 @@
+{
+  "name": "app-main",
+  "version": "1.0.0",
+  "author": "",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "main": "./src/main.js",
+  "type": "module",
+  "scripts": {
+    "lint": "standard --fix",
+    "dev": "cross-env NODE_ENV=development node ./esbuild.config.js -w",
+    "build": "cross-env NODE_ENV=production node ./esbuild.config.js",
+    "start": "pnpm run api & pnpm run dev && pnpm run lint",
+    "prod": "pnpm run build",
+    "api": "json-server --watch api/db.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "standard",
+      "prettier --write"
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "/node_modules",
+      "/dist",
+      "/android",
+      ".idea",
+      "esbuild.config.js"
+    ]
+  },
+  "devDependencies": {
+    "chokidar": "^3.5.3",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.15.5",
+    "esbuild-copy-files-plugin": "^1.1.0",
+    "esbuild-plugin-eslint": "^0.1.1",
+    "esbuild-plugin-path-alias": "^1.0.7",
+    "esbuild-serve": "^1.0.1",
+    "eslint": "^8.29.0",
+    "eslint-plugin-fetch": "^0.0.1",
+    "eslint-plugin-import": "^2.26.0",
+    "http-server": "^14.1.1",
+    "json-server": "^0.17.1",
+    "lint-staged": "^13.1.0",
+    "live-server": "^1.2.2",
+    "shx": "^0.3.4",
+    "standard": "^17.0.0",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "htm": "^3.1.1",
+    "terezzu": "^0.1.8",
+    "app-message":"workspace:*"
+  }
+}

@@ -1,6 +1,8 @@
 export default ({ html, css }) => {
   const template = () => html`
     <div>
+
+      <div data-component="appMessage"></div>
       <div data-component="routerView"></div>
     </div>
   `

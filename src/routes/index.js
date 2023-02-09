@@ -1,4 +1,6 @@
+import { render } from 'terezzu'
 import { appNotFound } from '@/components/appNotFound'
+import  { appRoot as appMessage  } from 'app-message'
 
 export const routes = [
   {
@@ -11,9 +13,10 @@ export const routes = [
   {
     regex: /^#\/$/,
     start: '#/',
-    mount: async () => {
-      const { appRoot: component } = await import('http://localhost:8081/main.js')
-      return { component }
+    mount: async (context) => {
+      render(appMessage, context)
+      // const { appRoot: component } = await import('http://localhost:8081/main.js')
+      return { component: appMessage }
     }
   }
 ]

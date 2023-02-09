@@ -1,11 +1,11 @@
 {
-  "name": "app-main",
+  "name": "bem-perfeito",
   "version": "1.0.0",
   "author": "",
   "description": "",
   "keywords": [],
   "license": "ISC",
-  "main": "./src/main.js",
+  "main": "src/main.js",
   "type": "module",
   "scripts": {
     "lint": "standard --fix",
@@ -52,7 +52,6 @@
   },
   "dependencies": {
     "htm": "^3.1.1",
-    "terezzu": "^0.1.8",
-    "app-message":"workspace:*"
+    "iares": "workspace:*"
   }
 }

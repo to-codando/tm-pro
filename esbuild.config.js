@@ -68,13 +68,13 @@ const __dirname = dirname(__filename)
   // `liveServer` local server for hot reload.
   if (!isDevMode()) {
     try {
-      stop && stop()
+      // stop && stop()
     } finally {
       process.exit(0)
     }
   }
 
-  console.log('oieee.')
+
   // `chokidar` watcher source changes.
   chokidar
     // Watches TypeScript and React TypeScript.

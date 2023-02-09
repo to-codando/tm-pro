@@ -11,7 +11,7 @@
     "lint": "standard --fix",
     "dev": "cross-env NODE_ENV=development node ./esbuild.config.js -w",
     "build": "cross-env NODE_ENV=production node ./esbuild.config.js",
-    "start": "pnpm run api & pnpm run dev && pnpm run lint",
+    "start": "pnpm run dev && pnpm run lint",
     "prod": "pnpm run build",
     "api": "json-server --watch api/db.json",
     "test": "echo \"Error: no test specified\" && exit 1"

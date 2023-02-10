@@ -68,7 +68,7 @@ const __dirname = dirname(__filename)
   // `liveServer` local server for hot reload.
   if (!isDevMode()) {
     try {
-      // stop && stop()
+      stop && stop()
     } finally {
       process.exit(0)
     }

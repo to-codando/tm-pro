@@ -5,7 +5,7 @@
   },
   "parserOptions": {
     "ecmaVersion": 2021,
-    "sourceType": "module"
+    "sourceType": "module",
   },
   "rules": {
     "semi": ["error", "never"],
@@ -14,9 +14,12 @@
     "no-implicit-globals": "off",
     "no-new-require":"off",
     "max-len":0,
-     "arrow-parens": "off"
+    "arrow-parens": "off",
+    "workspaces/no-relative-imports": "error",
+    "workspaces/require-dependency": "warn"
+
   },
-  "plugins": ["fetch"],
-  "extends": ["eslint:recommended", "plugin:fetch/recommended"],
-  "ignorePatterns": ["esbuild.config.js"]
+  "plugins": ["fetch", "workspaces"],
+  "extends": ["plugin:fetch/recommended", "eslint:recommended", "plugin:workspaces/recommended"],
+  "ignorePatterns": ["node_modules/", "esbuild.config.js", "dist/**/*.js"]
 }

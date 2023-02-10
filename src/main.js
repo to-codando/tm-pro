@@ -13,12 +13,12 @@ import { appMain } from '@/components/appMain'
 
 // export { appHost }
 
-import { createApp  } from 'iares'
+import { createApp, render  } from 'iares'
 
 const appHost = createApp({
   onMount: (context) => {
-    // render(appMain, context)
-    console.log('===>', context, appMain)
+    render(appMain, context)
+    // console.log('===>', context, appMain)
   }
 })
 

@@ -78,7 +78,7 @@ const __dirname = dirname(__filename)
   // `chokidar` watcher source changes.
   chokidar
     // Watches TypeScript and React TypeScript.
-    .watch('src/**/*.{js,ts,tsx}', {
+    .watch(['src/**/*.{js,ts,tsx}', '../iares/src/*.ts'], {
       interval: 0 // No delay
     })
     // Rebuilds esbuild (incrementally -- see `build.incremental`).

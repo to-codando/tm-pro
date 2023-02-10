@@ -1,7 +1,15 @@
 import { createState, html, css } from 'iares'
 
 const template = ({ state }) => html`
-  <h1>${state.title}</h1>
+  <div>
+    <h1 class="teste" data-value="1" onClick=${() => window.alert()}>${state.title}</h1>
+    <p>Teste</p>
+    <ul>
+      <li>texto</li>
+      <li>texto</li>
+      <li>texto</li>
+    </ul>
+  </div>
 `
 
 const styles = () => css``
@@ -22,9 +30,10 @@ const actions = () => {
 
 export const appMain = () => {
 
-  const state =  createState({
+  const state = createState({
     title: 'Initial title'
   })
+
 
   return {
     state,

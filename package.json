@@ -8,7 +8,7 @@
   "main": "src/main.js",
   "type": "module",
   "scripts": {
-    "lint": "standard --fix",
+    "lint": "pnpm rome format && pnpm rome check",
     "dev": "cross-env NODE_ENV=development node ./esbuild.config.js -w",
     "build": "cross-env NODE_ENV=production node ./esbuild.config.js",
     "start": "pnpm run dev && pnpm run lint",
@@ -16,48 +16,24 @@
     "api": "json-server --watch api/db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "lint-staged": {
-    "src/*.js": [
-      "standard",
-      "prettier --write"
-    ],
-    "ignore": [
-      "node_modules",
-      "dist",
-      "package-lock.json"
-    ]
-  },
-  "standard": {
-    "ignore": [
-      "/node_modules",
-      "/dist",
-      "/android",
-      ".idea",
-      "esbuild.config.js"
-    ]
-  },
   "devDependencies": {
     "chokidar": "^3.5.3",
     "cross-env": "^7.0.3",
-    "esbuild": "^0.15.5",
+    "esbuild": "^0.15.18",
     "esbuild-copy-files-plugin": "^1.1.0",
-    "esbuild-plugin-eslint": "^0.1.1",
     "esbuild-plugin-path-alias": "^1.0.7",
     "esbuild-serve": "^1.0.1",
-    "eslint": "^8.29.0",
-    "eslint-plugin-fetch": "^0.0.1",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-workspaces": "^0.7.0",
     "http-server": "^14.1.1",
+    "install-peerdeps": "^3.0.3",
     "json-server": "^0.17.1",
-    "lint-staged": "^13.1.0",
     "live-server": "^1.2.2",
+    "rome": "^11.0.0",
     "shx": "^0.3.4",
     "standard": "^17.0.0",
     "watch": "^1.0.2"
   },
   "dependencies": {
     "htm": "^3.1.1",
-    "iares": "workspace:*"
+    "iares": "workspace:1.0.0"
   }
 }

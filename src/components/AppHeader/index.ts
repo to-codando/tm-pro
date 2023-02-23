@@ -14,7 +14,7 @@ const styles = () => css`
       flex-wrap: wrap;
       width:100%;
       height:90px;
-      background: #f9f9f9;
+      background: #f8fdff;
     }
 
     .content-ctx {

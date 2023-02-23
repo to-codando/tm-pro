@@ -2,7 +2,7 @@ import { html, css } from "iares";
 
 const styles = () => css`
   app-button {
-    box-shadow: 3px 1px 15px #cbccd5
+    box-shadow: 3px 1px 15px #cddce9
   }
 
   app-button,
@@ -13,7 +13,7 @@ const styles = () => css`
     width:48px;
     height:48px;
     border-radius:100%;
-    background: #fff;
+    background: #f8fdff;
   }
 
   .button-ctx [icon] {

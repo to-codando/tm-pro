@@ -22,13 +22,15 @@ const styles = () => css`
     border:0;
     border-top-left-radius:5px;
     border-bottom-left-radius:5px;
-    outline:0;
-    background: #e5ebed;
-    transition: all .5s;
+    outline: 1px #e3ebf2 solid;
+    outline-offset: -2px;
+    background: #f0f6f8;
+    color:#9f9baa;
+    transition: all .3s;
   }
 
   .wrap-ctx > input:focus {
-    background: #DEEFF2;
+    outline-offset: -10px;
   }
 
   .wrap-ctx > button {
@@ -45,7 +47,7 @@ const styles = () => css`
   }
 
   .wrap-ctx > button [icon] {
-    color: #fff
+    color: #f8fdff
   }
 `;
 

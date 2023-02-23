@@ -5,6 +5,8 @@ import { AppSearch } from "@/components/AppSearch";
 import { AppButton } from "@/components/appButton";
 import { AppIcon } from "@/components/appIcon";
 import { AppDatepicker } from "@/components/AppDatepicker";
+import { AppCard } from "@/components/AppCard";
+import { AppHead } from "@/components/AppHead";
 
 const styles = () => css`
   app-main,
@@ -16,7 +18,7 @@ const styles = () => css`
     flex-wrap: wrap;
     width:100%;
     height: 100vh;
-    background: #e5ebed
+    background: #e8f2f5
   }
 
   .content-ctx {
@@ -95,7 +97,111 @@ const template = () => html`
           </>
         </div>
       </div>
-      <div class="tasks-ctx"></div>
+      <div class="tasks-ctx">
+        <${AppCard}>
+          <slot target="head">
+            <${AppHead}>
+              <slot target="start">
+                <h1><input type="checkbox"/></h1>
+              </slot>
+              <slot target="mid">
+                <h1>Criar componente do header</h1>
+              </slot>
+              <slot target="end">
+                <div class="status type-info"></div>
+              </slot>
+            </>
+          </slot>
+          <slot target=body>
+            <p>Um teste apenas</p>
+          </slot>
+        </>
+      </div>
+      <div class="tasks-ctx">
+        <${AppCard}>
+          <slot target="head">
+            <${AppHead}>
+              <slot target="start">
+                <h1><input type="checkbox"/></h1>
+              </slot>
+              <slot target="mid">
+                <h1>Criar componente do header</h1>
+              </slot>
+              <slot target="end">
+                <div class="status type-info"></div>
+              </slot>
+            </>
+          </slot>
+        </>
+      </div>
+      <div class="tasks-ctx">
+        <${AppCard}>
+          <slot target="head">
+            <${AppHead}>
+              <slot target="start">
+                <h1><input type="checkbox"/></h1>
+              </slot>
+              <slot target="mid">
+                <h1>Criar componente do header</h1>
+              </slot>
+              <slot target="end">
+                <div class="status type-warning"></div>
+              </slot>
+            </>
+          </slot>
+        </>
+      </div>
+      <div class="tasks-ctx">
+        <${AppCard}>
+          <slot target="head">
+            <${AppHead}>
+              <slot target="start">
+                <h1><input type="checkbox"/></h1>
+              </slot>
+              <slot target="mid">
+                <h1>Criar componente do header</h1>
+              </slot>
+              <slot target="end">
+                <div class="status type-success"></div>
+              </slot>
+            </>
+          </slot>
+        </>
+      </div>
+      <div class="tasks-ctx">
+        <${AppCard}>
+          <slot target="head">
+            <${AppHead}>
+              <slot target="start">
+                <h1><input type="checkbox"/></h1>
+              </slot>
+              <slot target="mid">
+                <h1>Criar componente do header</h1>
+              </slot>
+              <slot target="end">
+                <div class="status type-danger"></div>
+              </slot>
+            </>
+          </slot>
+        </>
+      </div>
+      <div class="tasks-ctx">
+        <${AppCard}>
+          <slot target="head">
+            <${AppHead}>
+              <slot target="start">
+                <h1><input type="checkbox"/></h1>
+              </slot>
+              <slot target="mid">
+                <h1>Criar componente do header</h1>
+              </slot>
+              <slot target="end">
+                <div class="status type-warning"></div>
+              </slot>
+            </>
+          </slot>
+        </>
+      </div>
     </div>
 
   </div>

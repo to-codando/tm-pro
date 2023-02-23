@@ -30,7 +30,7 @@ const __dirname = dirname(__filename);
     }),
     copy({
       source: ["./src/index.html"],
-      target: "dist",
+      target: "./dist",
       copyWithFolder: false, // will copy "images" folder with all files inside
     }),
   ];
@@ -48,7 +48,7 @@ const __dirname = dirname(__filename);
     // Uses incremental compilation (see `chokidar.on`).
     incremental: true,
     // Bundles JavaScript to (see `entryPoints`).
-    outdir: "dist",
+    outdir: "./dist",
     treeShaking: !isDevMode(),
     sourcemap: isDevMode(),
     minify: !isDevMode(),

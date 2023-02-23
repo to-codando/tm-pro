@@ -12,6 +12,22 @@ body {
   min-height:100vh;
 }
 
+input[type=checkbox],
+input[type=radio] { cursor: pointer }
+
+.status {
+  display:block;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: #ccc
+}
+
+.status.type-info { background: #30cff1 }
+.status.type-success { background: #41f970 }
+.status.type-danger { background: #f16392 }
+.status.type-warning{ background: #f9b041 }
+
 @media (max-width: 1080px) {
   html {
     font-size: 93.75%;

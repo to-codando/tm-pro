@@ -1,53 +1,115 @@
 import { html, css } from "iares";
 
-import { AppTitle } from "../appTitle";
-import { AppIcon } from "../appIcon";
+import { AppHeader } from "@/components/AppHeader";
+import { AppSearch } from "@/components/AppSearch";
+import { AppButton } from "@/components/appButton";
+import { AppIcon } from "@/components/appIcon";
+import { AppDatepicker } from "@/components/AppDatepicker";
 
 const styles = () => css`
-  app-main {
-    display:flex;
-    flex-wrap: wrap;
-    width:100%;
-    height:100%;
-    min-height: 100vh;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background:#e0daf1;
-  }
-
+  app-main,
   .wrap-ctx {
     display:flex;
-    flex-wrap:wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     width:100%;
-    padding:15px;
-    background:#ebebeb
+    height: 100vh;
+    background: #e5ebed
   }
 
-  .title-ctx {
-    color:blue
+  .content-ctx {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width:100%;
+    max-width:680px;
+    padding:20px;
   }
 
-  .text-ctx { color: brown }
+  .controls-ctx,
+  .tasks-ctx {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width:100%;
+  }
 
+  .tasks-ctx {
+    margin-top: 20px;
+  }
 
+  .datepicker-ctx,
+  .buttons-ctx {
+    display: flex;
+    width:50%;
+  }
+
+ .datepicker-ctx {
+  justify-content: flex-start;
+ }
+
+ .buttons-ctx {
+  justify-content: flex-end;
+ }
+
+ .buttons-ctx > * + * {
+  margin-left: 20px;
+ }
 `;
 
 const template = () => html`
   <div class="wrap-ctx">
-    <${AppTitle}>
-      <slot target="primeira-parte">
-        <p class="icon-ctx">
-            <${AppIcon} name="sentiment_calm" handle=${() => window.alert()}/>
-        </p>
-      </slot>
+
+    <${AppHeader}>
+        <slot target="content">
+          <${AppSearch}/>
+        </slot>
     <//>
+
+
+    <div class="content-ctx">
+      <div class="controls-ctx">
+        <div class="datepicker-ctx">
+          <${AppDatepicker}/>
+        </div>
+        <div class="buttons-ctx">
+          <${AppButton}>
+            <slot target="content">
+              <${AppIcon} name="edit"/>
+            </slot>
+          </>
+
+          <${AppButton}>
+            <slot target="content">
+              <${AppIcon} name="add"/>
+            </slot>
+          </>
+
+          <${AppButton}>
+            <slot target="content">
+              <${AppIcon} name="delete"/>
+            </slot>
+          </>
+        </div>
+      </div>
+      <div class="tasks-ctx"></div>
+    </div>
+
   </div>
 `;
 
 export const AppMain = () => {
+  const afterRender = () => {
+    console.log(" AppMain ");
+  };
   return {
     template,
     styles,
+    hooks: {
+      afterRender,
+    },
   };
 };

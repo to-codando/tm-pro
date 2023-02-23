@@ -8,7 +8,12 @@ const styles = () => css`
 
 const template = ({ props }) => {
   return html`
-  <span class="material-symbols-rounded" onClick=${() => props.handle()}>
+  <span
+    class="material-symbols-rounded"
+    onClick=${() => props.handle()}
+    style="color:${props.color}"
+    icon
+  >
     ${props.name}
   </span>
 `;

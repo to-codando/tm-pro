@@ -44,19 +44,33 @@ const styles = () => css`
 `;
 
 const template = ({ props, state, actions }) => html`
-  <div class="wrap-ctx">
-    <i>
-      <slot id="start"></slot>
-    </i>
-
-    <i>
-      <slot id="mid"></slot>
-    </i>
-
-    <i>
-      <slot id="end"></slot>
-    </i>
-  </div>
+  ${
+    props?.behaviour?.show?.start
+      ? html`
+      <i>
+        <slot id="start"></slot>
+      </i>
+    `
+      : ""
+  }
+  ${
+    props?.behaviour?.show?.mid
+      ? html`
+      <i>
+        <slot id="mid"></slot>
+      </i>
+    `
+      : ""
+  }
+  ${
+    props?.behaviour?.show?.end
+      ? html`
+      <i>
+        <slot id="end"></slot>
+      </i>
+    `
+      : ""
+  }
 `;
 
 export const AppHead = ({ props }) => {

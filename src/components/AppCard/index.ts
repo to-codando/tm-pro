@@ -18,10 +18,6 @@ const styles = () => css`
     width: 100%;
   }
 
-  .body-ctx:not(:empty) {
-    margin:15px 0;
-    background: #000
-  }
 `;
 
 const template = ({ props, state, actions }) => html`
